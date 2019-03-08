@@ -192,7 +192,7 @@ export default class Sticky extends Component {
             <div
                 style={
                     this.props.horizontalSticky
-                        ? { display: "inline-block" }
+                        ? { display: "inline-block", height: "100%" }
                         : undefined
                 }
             >
@@ -200,7 +200,7 @@ export default class Sticky extends Component {
                     ref={placeholder => (this.placeholder = placeholder)}
                     style={
                         this.props.horizontalSticky
-                            ? { display: "inline-block" }
+                            ? { display: "inline-block", height: "100%" }
                             : undefined
                     }
                 />
