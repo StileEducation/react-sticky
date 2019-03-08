@@ -148,12 +148,15 @@ export default class Sticky extends Component {
         this.setState({
             isSticky,
             wasSticky,
+
             distanceFromTop,
             distanceFromBottom,
             calculatedHeight,
+
             distanceFromLeft,
             distanceFromRight,
             calculatedWidth,
+
             style,
         });
     };
@@ -163,12 +166,15 @@ export default class Sticky extends Component {
             this.props.children({
                 isSticky: this.state.isSticky,
                 wasSticky: this.state.wasSticky,
+
                 distanceFromTop: this.state.distanceFromTop,
                 distanceFromBottom: this.state.distanceFromBottom,
+                calculatedHeight: this.state.calculatedHeight,
+
                 distanceFromLeft: this.state.distanceFromLeft,
                 distanceFromRight: this.state.distanceFromRight,
-                calculatedHeight: this.state.calculatedHeight,
                 calculatedWidth: this.state.calculatedWidth,
+
                 style: this.state.style,
             }),
             {
@@ -180,19 +186,19 @@ export default class Sticky extends Component {
 
         return (
             <div
-                style={{
-                    display: this.props.horizontalSticky
-                        ? "inline-block"
-                        : "inline",
-                }}
+                style={
+                    this.props.horizontalSticky
+                        ? { display: "inline-block" }
+                        : undefined
+                }
             >
                 <div
                     ref={placeholder => (this.placeholder = placeholder)}
-                    style={{
-                        display: this.props.horizontalSticky
-                            ? "inline-block"
-                            : "inline",
-                    }}
+                    style={
+                        this.props.horizontalSticky
+                            ? { display: "inline-block" }
+                            : undefined
+                    }
                 />
                 {element}
             </div>
