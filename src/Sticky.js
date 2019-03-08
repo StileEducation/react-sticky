@@ -137,8 +137,12 @@ export default class Sticky extends Component {
                           ? parent.offsetLeft - parent.offsetParent.scrollLeft
                           : 0
                       : rightDifference,
-                  width: placeholderClientRect.width,
-                  height: placeholderClientRect.height,
+                  width: !this.props.horizontalSticky
+                      ? placeholderClientRect.width
+                      : undefined,
+                  height: this.props.horizontalSticky
+                      ? placeholderClientRect.height
+                      : undefined,
               };
 
         if (!this.props.disableHardwareAcceleration) {
